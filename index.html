@@ -1,0 +1,29 @@
+<!-- html5 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hyunji-Todo</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="app">
+            <header>
+                <h1>Todo 앱</h1>
+                <!-- <button id="create-btn">New todo 추가</button> -->
+                <div class="input-group">
+                    <input id="todo-input" type="text" placeholder="할 일 입력"/>
+                    <button id="add-btn">추가</button>
+                </div>
+            </header>
+            <div class="todo-list" id="list"></div>
+        </div>
+        <!-- 로드를 해주기 -->
+        <script src="script.js"></script>
+    </body>
+</html>

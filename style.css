@@ -1,0 +1,213 @@
+/* 최종 완성 스타일 코드 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* 반응형 미디어쿼리 모바일 버전  */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* 모바일 기기에서 기본 폰트 크기를 줄임 */
+    }
+
+    .app {
+        width: 100%; /* 모바일 화면에서는 앱의 너비를 화면에 꽉 차게 조정 */
+        max-width: none; /* 최대 너비 제한을 해제 */
+        height: auto; /* 높이를 자동으로 조정하여 모든 내용이 들어갈 수 있도록 함 */
+        padding: 10px; /* 패딩을 줄여 공간 활용 최적화 */
+    }
+
+    header h1 {
+        font-size: 20px; /* 제목 폰트 크기를 줄임 */
+    }
+
+    .item,
+    .actions button {
+        padding: 5px; /* 아이템과 버튼의 패딩을 줄여 공간 활용 */
+    }
+
+    .item input[type="text"],
+    .actions button {
+        font-size: 12px; /* 입력 필드와 버튼의 폰트 크기를 줄임 */
+    }
+
+    button {
+        padding: 8px 10px; /* 버튼의 패딩 조정 */
+    }
+
+    /* 추가적인 모바일 최적화 스타일 */
+}
+
+/* PC 버전 기존 CSS 코드 */
+body {
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: start; /* 상단에서 내용 시작 */
+    min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+    padding-top: 20px; /* 상단에 패딩 추가하여 헤더가 잘리지 않도록 조정 */
+    padding-bottom: 20px; /* 상단에 패딩 추가하여 헤더가 잘리지 않도록 조정 */
+    font-size: 16px;
+}
+
+.app {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    /* width: 50%; */
+    background-color: #f1f2f6;
+}
+
+header {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column; /* 요소들을 세로 방향으로 쌓음 */
+    justify-content: center; /* 세로축에서 중앙 정렬 */
+    align-items: center; /* 가로축에서 아이템을 중앙 정렬 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 24px;
+    margin-right: 350px;
+}
+
+/*  */
+/* 입력 필드와 'Add' 버튼을 포함하는 컨테이너 스타일 */
+.input-group {
+    display: flex; /* Flexbox를 사용하여 내용을 가로로 정렬 */
+    justify-content: center; /* 가로축에서 중앙 정렬 */
+    align-items: center; /* 세로축에서 아이템을 중앙 정렬 */
+    margin: 20px 0; /* 위아래 여백 추가 */
+}
+
+/* 입력 필드 스타일 */
+#todo-input {
+    flex-grow: 1; /* 사용 가능한 공간을 채우도록 설정 */
+    margin-right: 10px; /* 'Add' 버튼과의 간격 */
+    padding: 10px; /* 입력 필드 내부 패딩 */
+    border: 3px solid #010101; /* 테두리 스타일 */
+    /* border-radius: 4px;  */
+    font-size: 16px; /* 폰트 크기 */
+    font-weight: bold;
+    height: 45px;
+    width: 250px;
+    margin-right: 0; /* 'Add' 버튼과의 간격 제거 */
+}
+
+/* 'Add' 버튼 스타일 */
+#add-btn {
+    padding: 10px 20px; /* 버튼 내부 패딩 */
+    background-color: #010101; /* 배경 색상 */
+    font-size: 16px; /* 폰트 크기 */
+    /* color: #333; */
+    color: #FFFFFF;
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    height: 45px;
+    border: 1px solid #010101;
+}
+
+#add-btn:hover {
+    background-color: #333; /* 호버 시 배경 색상 변경 */
+}
+
+/*  */
+
+button {
+    padding: 10px 15px;
+    /* border-radius: 5px; */
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* button:hover {
+    color: #333;
+} */
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 25px solid #f0f0f0;
+}
+
+.item.complete {
+    background-color: #f2f2f2;
+    /* 글자에 라인 긋는 코드 */
+    text-decoration: line-through;
+}
+
+.item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.item input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px;
+    border: 3px solid #010101;
+    height: 45px;
+    width: 250px;
+}
+
+.item input[type="text"]:disabled {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 0; /* 입력 필드와 수정 및 제거 버튼 여백 없이 붙이기 */
+}
+
+/* .edit-btn, 
+.remove-btn 전체 스타일  */
+.actions button {
+    margin-left: 5px;
+    height: 45px;
+    border: 1px solid #010101;
+    background-color: #010101;
+    margin-left: 0; 
+    color: #FFFFFF;
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+}
+
+.actions button:hover {
+    background-color: #333;
+}
+
+/* .remove-btn  {
+    color: #010101;
+} 
+.edit-btn {
+    color: #010101;
+} */
+
+.edit-btn,
+.remove-btn {
+    display: inline-block;
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+
+    -moz-osx-font-smoothing: grayscale;
+
+    font-feature-settings: "liga";
+}
